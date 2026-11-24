@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faldo Maxwell (ElySimp) | Visual Engineering Portfolio</title>
+  <meta name="description" content="Visual engineering portfolio of Faldo Maxwell (ElySimp): MaoCAT Android &amp; TFLite app, HomePoker Elo &amp; GTO trainer, LIME Sentiment XAI, and BMKG 2024 rainfall data warehouse.">
+  <meta property="og:title" content="Faldo Maxwell (ElySimp) | Visual Engineering Portfolio">
+  <meta property="og:description" content="Screenshots, model benchmarks, and interactive data visualizations across mobile ML, backend APIs, and SQL analytics.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elysimp.github.io/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function () {
+      document.documentElement.classList.add("js-motion");
+      try {
+        var saved = localStorage.getItem("elysimp-theme");
+        if (saved === "dark" || saved === "light") {
+          document.documentElement.setAttribute("data-theme", saved);
+        }
+      } catch (err) {
+        /* Ignore storage restrictions in embedded contexts */
+      }
+    })();
+  </script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-name">Faldo Maxwell</span>
+        <span class="brand-sep" aria-hidden="true">/</span>
+        <span class="brand-handle mono">ElySimp</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#maocat">MaoCAT</a>
+        <a href="#projects">Projects</a>
+        <a href="#bmkg">BMKG Data</a>
+        <a href="#about">About &amp; Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="icon-btn" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <span class="theme-label">Dark</span>
+        </button>
+
+        <button id="menu-toggle" class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-nav" class="mobile-drawer" hidden>
+      <nav class="container mobile-nav-list" aria-label="Mobile navigation">
+        <a href="#maocat">MaoCAT</a>
+        <a href="#projects">Projects</a>
+        <a href="#bmkg">BMKG Data</a>
+        <a href="#about">About &amp; Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 id="hero-title" class="hero-title">Faldo Maxwell</h1>
+          <p class="hero-role">Software Engineering &amp; Machine Learning (<span class="mono">ElySimp</span>)</p>
+          <p class="hero-summary">
+            Joint Degree engineer (Nanjing Xiaozhuang University &amp; Universitas Esa Unggul) building on-device TensorFlow Lite apps, async Python APIs, and relational data pipelines.
+          </p>
+          <p class="hero-proof mono">
+            3 On-Device TFLite Models · 1,830-Row MySQL Warehouse · Open for Indonesia Internships
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#maocat">View MaoCAT Showcase</a>
+            <button class="btn btn-secondary" type="button" data-contact-email>Contact Me</button>
+            <a class="btn btn-ghost" href="https://github.com/ElySimp" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+          </div>
+        </div>
+
+        <div class="hero-stage" aria-label="Selected product screenshots">
+          <button
+            class="stage-desktop"
+            type="button"
+            data-lightbox-src="img/HomePoker_LeaderboardUI.png"
+            aria-label="Zoom HomePoker Leaderboard screenshot"
+          >
+            <span class="stage-bar mono">HomePoker · Live GitHub Pages UI</span>
+            <img
+              src="img/HomePoker_LeaderboardUI.png"
+              width="1912"
+              height="956"
+              alt="HomePoker Leaderboard web interface showing player standings, cumulative chip trend line, and Elo rankings"
+              fetchpriority="high"
+            >
+          </button>
+
+          <button
+            class="stage-phone"
+            type="button"
+            data-lightbox-src="img/MaoCAT_Battle.jpg"
+            aria-label="Zoom MaoCAT Android speaking battle screenshot"
+          >
+            <span class="phone-crop">
+              <img
+                src="img/MaoCAT_Battle.jpg"
+                width="1080"
+                height="2436"
+                alt="MaoCAT Android app boss battle screen showing Nian Beast and Mandarin speaking tone prompt"
+                fetchpriority="high"
+              >
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="maocat" class="section section-alt" aria-labelledby="maocat-heading">
+      <div class="container">
+        <div class="section-head section-head-split" data-reveal>
+          <div class="section-head-left">
+            <span class="section-index mono">01</span>
+            <div>
+              <h2 id="maocat-heading">MaoCAT (HSK Quest): Adaptive Mandarin RPG &amp; On-Device ML</h2>
+              <p class="section-sub">
+                2026 to Present · Kotlin Android (MVVM, Room, CameraX, TFLite) paired with async FastAPI, SQLAlchemy 2.0, PostgreSQL, and JWT.
+              </p>
+            </div>
+          </div>
+          <a class="btn btn-primary" href="https://github.com/ElySimp/HSK_Quest" target="_blank" rel="noopener noreferrer">View HSK Quest on GitHub</a>
+        </div>
+
+        <div class="arch-strip" data-reveal aria-label="MaoCAT system architecture">
+          <svg class="arch-svg" viewBox="0 0 920 118" role="img" aria-label="Architecture flow from Kotlin Android client with 3 TFLite models to FastAPI and PostgreSQL">
+            <rect class="svg-card" x="8" y="14" width="278" height="90" rx="8"></rect>
+            <text class="svg-title" x="24" y="42">Android Client (Kotlin MVVM)</text>
+            <text class="svg-meta" x="24" y="64">Room v4 · CameraX · Pure-Kotlin DSP</text>
+            <text class="svg-accent" x="24" y="86">3 On-Device TFLite Engines</text>
+
+            <line class="svg-line" x1="292" y1="59" x2="354" y2="59"></line>
+            <polygon class="svg-arrow" points="354,54 364,59 354,64"></polygon>
+            <text class="svg-label" x="303" y="47">REST/JWT</text>
+
+            <rect class="svg-card" x="368" y="14" width="256" height="90" rx="8"></rect>
+            <text class="svg-title" x="384" y="42">FastAPI Async Backend</text>
+            <text class="svg-meta" x="384" y="64">9 Domain Routers · bcrypt Auth</text>
+            <text class="svg-accent" x="384" y="86">SQLAlchemy 2.0 + asyncpg</text>
+
+            <line class="svg-line" x1="630" y1="59" x2="688" y2="59"></line>
+            <polygon class="svg-arrow" points="688,54 698,59 688,64"></polygon>
+            <text class="svg-label" x="642" y="47">SSL</text>
+
+            <rect class="svg-card" x="702" y="14" width="210" height="90" rx="8"></rect>
+            <text class="svg-title" x="718" y="42">PostgreSQL (Aiven)</text>
+            <text class="svg-meta" x="718" y="64">Mastery Sync · Leaderboards</text>
+            <text class="svg-accent" x="718" y="86">Battle Logs &amp; Economy</text>
+          </svg>
+        </div>
+
+        <div class="phone-gallery" data-reveal>
+          <figure class="phone-card">
+            <button class="phone-frame" type="button" data-lightbox-src="img/MaoCAT_StartingScreen.jpg" aria-label="Inspect MaoCAT launch screen">
+              <span class="phone-crop">
+                <img src="img/MaoCAT_StartingScreen.jpg" width="1080" height="2436" alt="MaoCAT app launch screen with pixel cat emblem" loading="lazy">
+              </span>
+            </button>
+            <figcaption>Launch Screen &amp; Pixel Branding</figcaption>
+          </figure>
+
+          <figure class="phone-card">
+            <button class="phone-frame" type="button" data-lightbox-src="img/MaoCAT_Battle.jpg" aria-label="Inspect MaoCAT boss battle screen">
+              <span class="phone-crop">
+                <img src="img/MaoCAT_Battle.jpg" width="1080" height="2436" alt="MaoCAT RPG boss battle with Mandarin speaking prompt" loading="lazy">
+              </span>
+            </button>
+            <figcaption>Boss Combat &amp; Tone Speaking</figcaption>
+          </figure>
+
+          <figure class="phone-card">
+            <button class="phone-frame" type="button" data-lightbox-src="img/MaoCAT_Dictionary.jpg" aria-label="Inspect MaoCAT HSK dictionary screen">
+              <span class="phone-crop">
+                <img src="img/MaoCAT_Dictionary.jpg" width="1080" height="2436" alt="HSK 1 to 9 searchable dictionary with weak words filter and handwriting entry" loading="lazy">
+              </span>
+            </button>
+            <figcaption>HSK 1 to 9 Dictionary &amp; Weak Words</figcaption>
+          </figure>
+
+          <figure class="phone-card">
+            <button class="phone-frame" type="button" data-lightbox-src="img/MaoCAT_Gacha.jpg" aria-label="Inspect MaoCAT pet gacha screen">
+              <span class="phone-crop">
+                <img src="img/MaoCAT_Gacha.jpg" width="1080" height="2436" alt="MaoCAT Celestial Shrine companion pet gacha screen showing drop rates" loading="lazy">
+              </span>
+            </button>
+            <figcaption>Companion Gacha &amp; Buff System</figcaption>
+          </figure>
+        </div>
+
+        <div class="ml-lab" data-reveal>
+          <div class="tab-header" role="tablist" aria-label="MaoCAT machine learning benchmarks">
+            <button id="tab-hanzi" class="tab-btn" type="button" role="tab" aria-selected="true" aria-controls="panel-hanzi" tabindex="0">01. Handwriting (MobileNetV2)</button>
+            <button id="tab-tone" class="tab-btn" type="button" role="tab" aria-selected="false" aria-controls="panel-tone" tabindex="-1">02. 5-Tone Speaking (ToneNet)</button>
+            <button id="tab-cat" class="tab-btn" type="button" role="tab" aria-selected="false" aria-controls="panel-cat" tabindex="-1">03. Adaptive CAT (16 KB MLP)</button>
+          </div>
+
+          <div id="panel-hanzi" class="tab-panel" role="tabpanel" aria-labelledby="tab-hanzi">
+            <div class="ml-panel-grid">
+              <button class="chart-trigger" type="button" data-lightbox-src="img/MaoCAT_HanziHandwritingAcc.png" aria-label="Zoom Hanzi MobileNetV2 accuracy chart">
+                <img src="img/MaoCAT_HanziHandwritingAcc.png" width="646" height="407" alt="Bar chart of MobileNetV2 Hanzi handwriting test Top-1, Top-3, and Top-5 accuracy across HSK 1 through HSK 9" loading="lazy">
+                <span class="zoom-note mono">Click chart to expand</span>
+              </button>
+              <div class="ml-summary">
+                <h3>MobileNetV2 (alpha=0.75) Hanzi Classifier</h3>
+                <p>Trained on CASIA-HWDB filtered to unique Simplified Hanzi in HSK 1 to 9 (<code>96x96</code> grayscale) and exported to TFLite for real-time offline stroke recognition.</p>
+                <div class="metric-grid">
+                  <div class="metric-cell"><span class="metric-val mono">92.67%</span><span class="metric-label">Overall Top-1 Acc</span></div>
+                  <div class="metric-cell"><span class="metric-val mono">98.53%</span><span class="metric-label">Overall Top-5 Acc</span></div>
+                  <div class="metric-cell"><span class="metric-val mono">3,087</span><span class="metric-label">Hanzi Classes</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="panel-tone" class="tab-panel" role="tabpanel" aria-labelledby="tab-tone" hidden>
+            <div class="ml-panel-grid">
+              <button class="chart-trigger" type="button" data-lightbox-src="img/MaoCAT_ToneSpeakingAcc.png" aria-label="Zoom Mandarin 5-tone confusion matrix and F1 chart">
+                <img src="img/MaoCAT_ToneSpeakingAcc.png" width="1823" height="663" alt="Unseen-speaker 5-tone confusion matrix (90.73% accuracy) and per-tone precision, recall, and F1-score breakdown (Macro F1 91.01%)" loading="lazy">
+                <span class="zoom-note mono">Click chart to expand</span>
+              </button>
+              <div class="ml-summary">
+                <h3>Dual-Head ToneNet (SeparableConv1D + BiGRU + CTC)</h3>
+                <p>Paired with a pure-Kotlin 80-bin Log-Mel + 8-dim YIN pitch DSP front-end (16 kHz) grading 1 to 3 syllable answers (<code>89.01%</code> zero-shot on BZNSYP).</p>
+                <div class="metric-grid">
+                  <div class="metric-cell"><span class="metric-val mono">90.73%</span><span class="metric-label">CTC Tone Acc (91.01% F1)</span></div>
+                  <div class="metric-cell"><span class="metric-val mono">13.4 ms</span><span class="metric-label">INT8 Latency (29.2 ms FP16)</span></div>
+                  <div class="metric-cell"><span class="metric-val mono">99.8%</span><span class="metric-label">Foil-Word Rejection</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="panel-cat" class="tab-panel" role="tabpanel" aria-labelledby="tab-cat" hidden>
+            <div class="ml-panel-grid">
+              <div class="cat-visual-box">
+                <p class="chart-title">Paired simulation benchmark (N=1,000 learners): ML CAT vs. Rule-Based Shuffle-Bag</p>
+                <div class="sim-bar-group">
+                  <div class="bar-head"><span>Flow Zone Gain (70 to 75% target)</span><span class="mono">+15.09%</span></div>
+                  <div class="bar-track"><div class="bar-fill anim-bar" style="--bar-scale: 0.7545;"></div></div>
+                </div>
+                <div class="sim-bar-group">
+                  <div class="bar-head"><span>72-Hour Retention Gain</span><span class="mono">+4.78%</span></div>
+                  <div class="bar-track"><div class="bar-fill anim-bar" style="--bar-scale: 0.478;"></div></div>
+                </div>
+                <div class="sim-bar-group">
+                  <div class="bar-head"><span>Held-Out Recall Prediction ROC-AUC</span><span class="mono">0.7418</span></div>
+                  <div class="bar-track"><div class="bar-fill anim-bar" style="--bar-scale: 0.7418;"></div></div>
+                </div>
+              </div>
+              <div class="ml-summary">
+                <h3>Multi-Task MLP CAT Scheduler (<code>16 KB</code> TFLite)</h3>
+                <p>Compact 3.4K-parameter network predicting recall probability and memory half-life with safe runtime fallback to the deterministic rule-based engine.</p>
+                <div class="metric-grid">
+                  <div class="metric-cell"><span class="metric-val mono">0.7418</span><span class="metric-label">Held-Out ROC-AUC</span></div>
+                  <div class="metric-cell"><span class="metric-val mono">+15.09%</span><span class="metric-label">Flow Zone Improvement</span></div>
+                  <div class="metric-cell"><span class="metric-val mono">16 KB</span><span class="metric-label">Model Footprint</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-head section-head-split" data-reveal>
+          <div class="section-head-left">
+            <span class="section-index mono">02</span>
+            <div>
+              <h2 id="projects-heading">Interactive Project Gallery</h2>
+              <p class="section-sub">Inspect UI screenshots, model explainability charts, and live 2024 data analytics.</p>
+            </div>
+          </div>
+
+          <div class="filter-bar" role="group" aria-label="Filter projects by category">
+            <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All (4)</button>
+            <button class="filter-btn" type="button" data-filter="web" aria-pressed="false">Web &amp; Elo (1)</button>
+            <button class="filter-btn" type="button" data-filter="ml" aria-pressed="false">NLP &amp; XAI (1)</button>
+            <button class="filter-btn" type="button" data-filter="data" aria-pressed="false">Data &amp; SQL (1)</button>
+            <button class="filter-btn" type="button" data-filter="oss" aria-pressed="false">Open Source (1)</button>
+          </div>
+        </div>
+
+        <p id="project-count" class="filter-status mono" aria-live="polite">Showing 4 of 4 projects</p>
+
+        <div id="projects-list" class="projects-stack">
+          <article class="visual-project" data-category="web" data-reveal>
+            <div class="vp-header">
+              <div>
+                <span class="mono vp-meta">2026 to Present · HTML5 / CSS3 / Vanilla JS / Chart.js v4 / JSON</span>
+                <h3>HomePoker Leaderboard &amp; GTO Training Hub</h3>
+              </div>
+              <div class="vp-actions">
+                <a class="btn btn-primary btn-sm" href="https://elysimp.github.io/HomePoker-Leaderboard/index.html" target="_blank" rel="noopener noreferrer">Open Live App</a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/ElySimp/HomePoker-Leaderboard" target="_blank" rel="noopener noreferrer">View Source</a>
+              </div>
+            </div>
+
+            <div class="vp-body">
+              <div class="switcher-box" data-switcher="homepoker">
+                <div class="switcher-tabs" role="group" aria-label="HomePoker UI views">
+                  <button class="sw-btn" type="button" data-sw-target="hp-board" aria-pressed="true">Leaderboard &amp; Elo</button>
+                  <button class="sw-btn" type="button" data-sw-target="hp-gto" aria-pressed="false">13x13 GTO Range Lab</button>
+                </div>
+
+                <div class="sw-panel" data-sw-panel="hp-board">
+                  <button class="desktop-frame" type="button" data-lightbox-src="img/HomePoker_LeaderboardUI.png" aria-label="Zoom HomePoker Leaderboard view">
+                    <img src="img/HomePoker_LeaderboardUI.png" width="1912" height="956" alt="HomePoker Leaderboard UI showing top podium, cumulative trend chart, and Elo power ranking" loading="lazy">
+                  </button>
+                </div>
+
+                <div class="sw-panel" data-sw-panel="hp-gto" hidden>
+                  <button class="desktop-frame" type="button" data-lightbox-src="img/HomePoker_GtoUI.png" aria-label="Zoom HomePoker 13x13 GTO Range Lab view">
+                    <img src="img/HomePoker_GtoUI.png" width="1292" height="897" alt="HomePoker 13x13 poker preflop range matrix and postflop tactical equity advisor" loading="lazy">
+                  </button>
+                </div>
+              </div>
+
+              <div class="vp-copy">
+                <p>
+                  Tracks <strong>15 players</strong> across <strong>23 sessions (421 rounds)</strong> on GitHub Pages using a zero-sum multiplayer Elo engine (10 rank tiers, K=20) that weights chip spread, profit velocity, bust penalties, and endurance.
+                </p>
+                <div class="tag-row">
+                  <span class="tag">Zero-Sum Elo</span>
+                  <span class="tag">Chart.js v4</span>
+                  <span class="tag">GTO Matrix</span>
+                  <span class="tag">GitHub Pages</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="visual-project" data-category="ml" data-reveal>
+            <div class="vp-header">
+              <div>
+                <span class="mono vp-meta">Early 2025 · Python / Scikit-Learn / NLTK / LIME / 2.66M TF-IDF Features</span>
+                <h3>Sentiment Analysis with Explainable AI (XAI)</h3>
+              </div>
+              <div class="vp-actions">
+                <a class="btn btn-ghost btn-sm" href="https://github.com/ElySimp/Sentiment-Analysis-SVM-Naive-Bayes" target="_blank" rel="noopener noreferrer">View Notebook on GitHub</a>
+              </div>
+            </div>
+
+            <div class="vp-body">
+              <div class="switcher-box" data-switcher="xai">
+                <div class="switcher-tabs" role="group" aria-label="Sentiment Analysis XAI charts">
+                  <button class="sw-btn" type="button" data-sw-target="xai-lime" aria-pressed="true">LIME Word Highlights</button>
+                  <button class="sw-btn" type="button" data-sw-target="xai-acc" aria-pressed="false">Accuracy &amp; Confusion Matrices</button>
+                </div>
+
+                <div class="sw-panel" data-sw-panel="xai-lime">
+                  <button class="chart-trigger" type="button" data-lightbox-src="img/XAI_LimeExplanation.png" aria-label="Zoom LIME token explanation chart">
+                    <img src="img/XAI_LimeExplanation.png" width="847" height="656" alt="LIME explanation chart showing negative vs positive token weights and highlighted movie review text" loading="lazy">
+                  </button>
+                </div>
+
+                <div class="sw-panel" data-sw-panel="xai-acc" hidden>
+                  <button class="chart-trigger" type="button" data-lightbox-src="img/XAI_ModelAccuracyMetrics.png" aria-label="Zoom LinearSVC vs Naive Bayes accuracy and confusion matrices">
+                    <img src="img/XAI_ModelAccuracyMetrics.png" width="1590" height="1190" alt="Model comparison showing LinearSVC 90.41% vs Naive Bayes 87.89% accuracy, detailed metrics, and confusion matrices" loading="lazy">
+                  </button>
+                </div>
+              </div>
+
+              <div class="vp-copy">
+                <p>
+                  Benchmarked LinearSVC (<strong>90.41% accuracy</strong>, 90.54% F1) against Multinomial Naive Bayes (<strong>87.89% accuracy</strong>, 87.80% F1) on 50,000 IMDB reviews, pairing sigmoid-calibrated LIME local explanations with global feature weights.
+                </p>
+                <div class="tag-row">
+                  <span class="tag">LinearSVC</span>
+                  <span class="tag">MultinomialNB</span>
+                  <span class="tag">LIME XAI</span>
+                  <span class="tag">50k Reviews</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article id="bmkg" class="visual-project bmkg-project" data-category="data" data-reveal>
+            <div class="vp-header">
+              <div>
+                <span class="mono vp-meta">Early 2025 · MySQL Star Schema / Python ETL / SQLAlchemy / Streamlit &amp; Plotly</span>
+                <h3>BMKG 2024 Rainfall Data Warehouse &amp; Animated Analytics</h3>
+              </div>
+              <div class="vp-actions">
+                <a class="btn btn-ghost btn-sm" href="https://github.com/ElySimp/Curah-Hujan-Datasets" target="_blank" rel="noopener noreferrer">View Warehouse Code</a>
+              </div>
+            </div>
+
+            <p class="bmkg-intro">
+              Built a MySQL Star Schema warehouse and Python ETL pipeline processing <strong>1,830 daily rows (2024)</strong> across 5 West Java BMKG stations, normalizing decimal commas and sensor codes (<code>8888</code>, <code>9999</code>). Below are the actual monthly totals computed from the repository CSVs.
+            </p>
+
+            <div class="bmkg-layout">
+              <div class="bmkg-chart-panel">
+                <div class="bmkg-panel-head">
+                  <h4 class="chart-title">Monthly 2024 rainfall (mm) from raw BMKG CSVs: Select a West Java region</h4>
+                  <span id="bmkg-readout" class="bmkg-readout mono" aria-live="polite">Hover or focus any month bar</span>
+                </div>
+
+                <div class="station-bar" role="group" aria-label="Select BMKG West Java station">
+                  <button class="station-btn" type="button" data-station="kota_bogor" aria-pressed="true">Kota Bogor</button>
+                  <button class="station-btn" type="button" data-station="kab_bogor" aria-pressed="false">Kab. Bogor</button>
+                  <button class="station-btn" type="button" data-station="majalengka" aria-pressed="false">Kab. Majalengka</button>
+                  <button class="station-btn" type="button" data-station="cirebon" aria-pressed="false">Kab. Cirebon</button>
+                  <button class="station-btn" type="button" data-station="bandung" aria-pressed="false">Kota Bandung</button>
+                </div>
+
+                <div class="svg-chart-wrap">
+                  <svg id="bmkg-svg" viewBox="0 0 680 265" role="img" aria-label="Animated monthly 2024 rainfall bar chart for selected West Java station">
+                    <line class="chart-grid" x1="48" y1="225" x2="664" y2="225"></line>
+                    <line class="chart-grid" x1="48" y1="163" x2="664" y2="163"></line>
+                    <line class="chart-grid" x1="48" y1="102" x2="664" y2="102"></line>
+                    <line class="chart-grid" x1="48" y1="40" x2="664" y2="40"></line>
+                    <text class="chart-axis" x="40" y="229" text-anchor="end">0</text>
+                    <text class="chart-axis" x="40" y="167" text-anchor="end">250</text>
+                    <text class="chart-axis" x="40" y="106" text-anchor="end">500</text>
+                    <text class="chart-axis" x="40" y="44" text-anchor="end">750 mm</text>
+                    <g id="bmkg-bars"></g>
+                  </svg>
+                </div>
+
+                <div class="bmkg-kpi-row">
+                  <div class="metric-cell"><span id="kpi-annual" class="metric-val mono">4,812.4 mm</span><span class="metric-label">2024 Total</span></div>
+                  <div class="metric-cell"><span id="kpi-rainy" class="metric-val mono">236 / 319</span><span class="metric-label">Rainy / Valid Days</span></div>
+                  <div class="metric-cell"><span id="kpi-peak" class="metric-val mono">Mar (723.2)</span><span class="metric-label">Peak Month (mm)</span></div>
+                  <div class="metric-cell"><span id="kpi-maxday" class="metric-val mono">146.6 mm</span><span class="metric-label">Single-Day Max</span></div>
+                </div>
+              </div>
+
+              <div class="bmkg-schema-panel" aria-label="MySQL Star Schema pipeline">
+                <h4 class="chart-title">Warehouse Star Schema (<code>faldodwbmkg</code>)</h4>
+                <svg class="schema-svg" viewBox="0 0 340 270" role="img" aria-label="Star schema diagram showing DimWaktu and DimLokasi feeding FactDataIklim">
+                  <rect class="svg-card" x="10" y="12" width="145" height="66" rx="6"></rect>
+                  <text class="svg-title" x="22" y="34">DimWaktu</text>
+                  <text class="svg-meta" x="22" y="54">date · year · month</text>
+                  <text class="svg-meta" x="22" y="69">PK: id_waktu</text>
+
+                  <rect class="svg-card" x="185" y="12" width="145" height="66" rx="6"></rect>
+                  <text class="svg-title" x="197" y="34">DimLokasi</text>
+                  <text class="svg-meta" x="197" y="54">5 stations · WMO ID</text>
+                  <text class="svg-meta" x="197" y="69">PK: id_lokasi</text>
+
+                  <line class="svg-line" x1="82" y1="78" x2="132" y2="114"></line>
+                  <line class="svg-line" x1="258" y1="78" x2="208" y2="114"></line>
+
+                  <rect class="svg-card svg-card-accent" x="45" y="114" width="250" height="72" rx="6"></rect>
+                  <text class="svg-title" x="62" y="138">FactDataIklim (MySQL)</text>
+                  <text class="svg-meta" x="62" y="158">1,830 daily rows (RR, Tavg, RH, ff)</text>
+                  <text class="svg-accent" x="62" y="176">Codes 8888 / 9999 normalized</text>
+
+                  <line class="svg-line" x1="170" y1="186" x2="170" y2="212"></line>
+                  <polygon class="svg-arrow" points="165,212 175,212 170,220"></polygon>
+
+                  <rect class="svg-card" x="45" y="222" width="250" height="40" rx="6"></rect>
+                  <text class="svg-meta" x="170" y="247" text-anchor="middle">6-Tab Bilingual Streamlit + Plotly App</text>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <article class="visual-project oss-strip" data-category="oss" data-reveal>
+            <div class="vp-header">
+              <div>
+                <span class="mono vp-meta">2024 to Present · Valve KeyValues (VDF) / Localization QA / Git</span>
+                <h3>Alien Swarm: Reactive Drop (Steam / Valve) Indonesian Localization</h3>
+              </div>
+              <a class="btn btn-ghost btn-sm" href="https://github.com/ElySimp/reactivedrop_translations" target="_blank" rel="noopener noreferrer">View Commits on GitHub</a>
+            </div>
+            <div class="oss-metrics">
+              <div class="oss-bar-wrap">
+                <div class="bar-head"><span>Official EN to ID Corpus Progress</span><span class="mono">7,346 lines updated · 50 commits (~50%)</span></div>
+                <div class="bar-track"><div class="bar-fill anim-bar" style="--bar-scale: 0.50;"></div></div>
+              </div>
+              <p class="oss-note">Authoring UI, gameplay, and narrative translations with in-engine QA for text clipping and line-break accuracy.</p>
+            </div>
+          </article>
+        </div>
+
+        <div id="projects-empty" class="empty-state" hidden>
+          <p>No projects matched the selected category filter.</p>
+          <button id="reset-filter-btn" class="btn btn-secondary btn-sm" type="button">Show All Projects</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section section-alt" aria-labelledby="about-heading">
+      <div class="container about-grid" data-reveal>
+        <div class="about-info">
+          <div class="section-head">
+            <span class="section-index mono">03</span>
+            <div>
+              <h2 id="about-heading">Background &amp; Core Stack</h2>
+              <p class="section-sub">
+                Joint Degree in Software Engineering (Nanjing Xiaozhuang University, 4.45/5.00) &amp; Informatics Engineering (Universitas Esa Unggul, 3.89/4.00), Expected Jul 2027. Dicoding Machine Learning Intermediate (2024).
+              </p>
+            </div>
+          </div>
+
+          <div class="compact-facts">
+            <div class="fact-item">
+              <span class="fact-label">Proficient</span>
+              <span class="fact-val">Python, SQL (PostgreSQL, MySQL), FastAPI, TFLite, PyTorch, Scikit-Learn</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Familiar</span>
+              <span class="fact-val">Kotlin Android (MVVM, Room), Java (J2EE/Spring Boot), JavaScript, Linux/VPS</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Languages</span>
+              <span class="fact-val">Indonesian (Native) · English (TOEFL Pred. 580) · Mandarin (HSK 3 Univ. Exam; HSK 4 Jan 2027)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Get in Touch</h3>
+          <p>Open for Software, Backend, or Data/ML internships in Indonesia. Email is assembled in JavaScript to block plain-text scrapers.</p>
+          <div class="contact-actions">
+            <button class="btn btn-primary" type="button" data-contact-email>Contact Me</button>
+            <button id="copy-email-btn" class="btn btn-secondary" type="button">Copy Email</button>
+            <a class="btn btn-ghost" href="https://github.com/ElySimp" target="_blank" rel="noopener noreferrer">GitHub (@ElySimp)</a>
+          </div>
+          <p id="contact-status" class="contact-status mono" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>Faldo Maxwell (ElySimp) · Jakarta, Indonesia</span>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption" hidden>
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <div class="lightbox-dialog">
+      <div class="lightbox-bar">
+        <span id="lightbox-counter" class="mono">1 / 10</span>
+        <div class="lightbox-controls">
+          <button id="lightbox-prev" class="icon-btn" type="button" aria-label="Previous image">Prev</button>
+          <button id="lightbox-next" class="icon-btn" type="button" aria-label="Next image">Next</button>
+          <button id="lightbox-close" class="icon-btn" type="button" aria-label="Close image preview" data-lightbox-close>Close</button>
+        </div>
+      </div>
+      <div class="lightbox-stage">
+        <img id="lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1080" height="1080" alt="">
+      </div>
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
