@@ -55,6 +55,15 @@
     return EMAIL_USER + "@" + EMAIL_DOMAIN;
   }
 
+  function buildGmailComposeUrl(address) {
+    return (
+      "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+      encodeURIComponent(address) +
+      "&su=" +
+      encodeURIComponent("Internship Inquiry")
+    );
+  }
+
   /* Light/Dark theme persistence */
   function initThemeToggle() {
     var root = document.documentElement;
@@ -459,13 +468,22 @@
   function initContactControls() {
     var statusEl = document.getElementById("contact-status");
     var copyBtn = document.getElementById("copy-email-btn");
-    var triggers = Array.prototype.slice.call(document.querySelectorAll("[data-contact-email]"));
+    var gmailTriggers = Array.prototype.slice.call(document.querySelectorAll("[data-contact-email]"));
+    var mailtoTriggers = Array.prototype.slice.call(document.querySelectorAll("[data-contact-mailto]"));
 
-    triggers.forEach(function (btn) {
+    gmailTriggers.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var address = assembleEmail();
+        window.open(buildGmailComposeUrl(address), "_blank", "noopener,noreferrer");
+        if (statusEl) statusEl.textContent = "Opening Gmail compose for " + address;
+      });
+    });
+
+    mailtoTriggers.forEach(function (btn) {
       btn.addEventListener("click", function () {
         var address = assembleEmail();
         window.location.href = "mailto:" + address + "?subject=" + encodeURIComponent("Internship Inquiry");
-        if (statusEl) statusEl.textContent = "Opening email client for " + address;
+        if (statusEl) statusEl.textContent = "Opening default mail app for " + address;
       });
     });
 
